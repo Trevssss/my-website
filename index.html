@@ -110,6 +110,20 @@
     .contact-links a:hover { text-decoration: underline; text-underline-offset: 5px; }
     .contact-box form { display: grid; align-content: center; gap: 12px; }
     .enquiry-button { display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 86px; font-size: 16px; }
+    .contact-box form .button { width: fit-content; }
+    .flow-step[hidden] { display: none; }
+    .flow-step { padding: 70px 0; background: var(--cream); }
+    .flow-panel { width: min(760px, calc(100% - 64px)); margin: 0 auto; padding: 42px; background: var(--paper); border: 1px solid var(--line); }
+    .flow-panel h2 { margin-bottom: 18px; font-size: clamp(36px, 5vw, 58px); }
+    .flow-panel > p:not(.eyebrow), .flow-panel .account-copy { color: var(--muted); line-height: 1.7; }
+    .flow-panel form { display: grid; gap: 12px; margin-top: 26px; }
+    .flow-panel form .button { cursor: pointer; border: 0; justify-content: space-between; margin-top: 12px; }
+    .flow-status { min-height: 20px; margin: 0; color: var(--ink); font: 11px var(--mono); }
+    .account-details { margin-top: 25px; padding: 25px; color: var(--paper); background: var(--ink); }
+    .account-details strong { display: block; margin-top: 8px; color: var(--lime); font: 22px var(--mono); }
+    .account-details p { margin: 8px 0 0; }
+    .copy-account { margin-top: 18px; padding: 10px 14px; color: var(--ink); background: var(--lime); border: 0; cursor: pointer; font: 11px var(--mono); text-transform: uppercase; }
+    .back-to-contact { display: inline-block; margin-top: 22px; color: var(--coral); font: 11px var(--mono); text-decoration: underline; text-underline-offset: 4px; }
     .enquiry-icon, .pricing-icon { display: inline-grid; place-items: center; width: 48px; height: 48px; color: var(--ink); background: var(--lime); border-radius: 50%; font: 24px var(--mono); }
     .pricing-icon { margin-bottom: 18px; }
     .price-card:nth-child(2) .pricing-icon { background: var(--sky); }
@@ -141,6 +155,7 @@
       .step + .step { padding-left: 0; }
       .price-card.featured { transform: none; }
       .contact-box { padding: 35px 25px; }
+      .flow-panel { width: min(100% - 36px, 600px); padding: 30px 24px; }
       .footer-row { flex-direction: column; }
     }
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
@@ -155,7 +170,7 @@
   <header class="shell">
     <a class="logo" href="#top">TREVS<span>DESIGN</span></a>
     <nav aria-label="Main navigation">
-      <a href="#studio">Studio</a><a href="#about">About Us</a><a href="#services">Services</a><a href="#work">Work</a><a href="#pricing">Pricing</a><a class="nav-cta" href="enquiry.html">Start a project</a>
+      <a href="#studio">Studio</a><a href="#about">About Us</a><a href="#services">Services</a><a href="#work">Work</a><a href="#pricing">Pricing</a><a class="nav-cta" href="#contact">Start a project</a>
     </nav>
   </header>
 
@@ -166,7 +181,7 @@
           <p class="eyebrow">Independent creative studio / 2026</p>
           <h1>Turn your designs into <em>your reality.</em></h1>
           <p class="hero-copy">We build thoughtful websites, visual identities and graphics for people with something worth putting into the world.</p>
-          <a class="button" href="enquiry.html">Start a project</a>
+          <a class="button" href="#contact">Start a project</a>
         </div>
         <div class="hero-art" role="img" aria-label="A colorful design studio workspace">
           <div class="art-tag">MAKE IT<br>MEMORABLE<br>↘</div>
@@ -197,9 +212,9 @@
       <div class="shell">
         <div class="section-heading"><p class="eyebrow">02 / What we do</p><div><h2>Design that works as hard as <em>you do.</em></h2></div></div>
         <div class="service-grid">
-          <a class="service" href="enquiry.html"><span class="service-icon" aria-hidden="true">/</span><span class="service-number">01 / WEB</span><h3>Web design &amp; build</h3><p>Responsive, confident websites that explain what you do and make it easy for the right people to choose you.</p></a>
-          <a class="service" href="enquiry.html"><span class="service-icon" aria-hidden="true">+</span><span class="service-number">02 / BRAND</span><h3>Brand identity</h3><p>Logos, color systems and visual direction that give your business a recognizable point of view.</p></a>
-          <a class="service" href="enquiry.html"><span class="service-icon" aria-hidden="true">*</span><span class="service-number">03 / GRAPHICS</span><h3>Graphics &amp; campaigns</h3><p>Social graphics, launch assets and print-ready design that keep every touchpoint looking considered.</p></a>
+          <a class="service" href="#contact"><span class="service-icon" aria-hidden="true">/</span><span class="service-number">01 / WEB</span><h3>Web design &amp; build</h3><p>Responsive, confident websites that explain what you do and make it easy for the right people to choose you.</p></a>
+          <a class="service" href="#contact"><span class="service-icon" aria-hidden="true">+</span><span class="service-number">02 / BRAND</span><h3>Brand identity</h3><p>Logos, color systems and visual direction that give your business a recognizable point of view.</p></a>
+          <a class="service" href="#contact"><span class="service-icon" aria-hidden="true">*</span><span class="service-number">03 / GRAPHICS</span><h3>Graphics &amp; campaigns</h3><p>Social graphics, launch assets and print-ready design that keep every touchpoint looking considered.</p></a>
         </div>
       </div>
     </section>
@@ -231,9 +246,9 @@
       <div class="shell">
         <div class="section-heading"><p class="eyebrow">05 / Transparent pricing</p><div><h2>Big ambition. <em>Accessible starts.</em></h2></div></div>
         <div class="pricing-grid">
-          <article class="price-card"><span class="pricing-icon" aria-hidden="true">/</span><h3>Launch</h3><div class="price">₦7,500</div><ul><li>Logo and color direction</li><li>One-page website</li><li>Social profile kit</li></ul><a class="button" href="enquiry.html">Choose launch</a></article>
-          <article class="price-card featured"><span class="pricing-icon" aria-hidden="true">+</span><h3>Grow</h3><div class="price">₦11,000</div><ul><li>Full visual identity</li><li>Multi-page website</li><li>Graphics starter pack</li></ul><a class="button" href="enquiry.html">Choose grow</a></article>
-          <article class="price-card"><span class="pricing-icon" aria-hidden="true">*</span><h3>Build a plan</h3><div class="price">Choose your service</div><ul><li>Graphic design: ₦7,500</li><li>Website design: ₦11,000</li><li>Start with an enquiry</li></ul><a class="button" href="enquiry.html">Build a plan</a></article>
+          <article class="price-card"><span class="pricing-icon" aria-hidden="true">/</span><h3>Launch</h3><div class="price">₦7,500</div><ul><li>Logo and color direction</li><li>One-page website</li><li>Social profile kit</li></ul><a class="button" href="#contact">Choose launch</a></article>
+          <article class="price-card featured"><span class="pricing-icon" aria-hidden="true">+</span><h3>Grow</h3><div class="price">₦11,000</div><ul><li>Full visual identity</li><li>Multi-page website</li><li>Graphics starter pack</li></ul><a class="button" href="#contact">Choose grow</a></article>
+          <article class="price-card"><span class="pricing-icon" aria-hidden="true">*</span><h3>Build a plan</h3><div class="price">Choose your service</div><ul><li>Graphic design: ₦7,500</li><li>Website design: ₦11,000</li><li>Start with an enquiry</li></ul><a class="button" href="#contact">Build a plan</a></article>
         </div>
       </div>
     </section>
@@ -249,7 +264,51 @@
             <a href="https://www.snapchat.com/add/trevsistokewl" target="_blank" rel="noopener">Snapchat @trevsistokewl</a>
           </div>
         </div>
-        <a class="button enquiry-button" href="enquiry.html"><span class="enquiry-icon" aria-hidden="true">-&gt;</span>Send an enquiry</a>
+        <form id="enquiry-form" action="https://formsubmit.co/el/bufelu" method="POST">
+          <input type="hidden" name="_subject" value="New TREVS DESIGN enquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_autoresponse" value="">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email address" required>
+          <textarea name="message" placeholder="Tell us about your project" required></textarea>
+          <button class="button enquiry-button" type="submit"><span class="enquiry-icon" aria-hidden="true">-&gt;</span>Send an enquiry</button>
+          <p class="flow-status" id="enquiry-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="flow-step" id="payment-step" hidden>
+      <div class="flow-panel">
+        <p class="eyebrow">TREVS DESIGN / PAYMENT</p>
+        <h2>How do you pay?</h2>
+        <p>Your enquiry is ready. Use the bank transfer details below, then send your payment confirmation.</p>
+        <div class="account-details">
+          <span class="eyebrow">Bank transfer</span>
+          <strong id="account-number">5174477903</strong>
+          <p>FAITHWIN NGOZI ORJI</p>
+          <p>MONIEPOINT MICROFINANCE BANK</p>
+          <button class="copy-account" id="copy-account" type="button">Copy account number</button>
+          <p class="flow-status" id="copy-status" aria-live="polite"></p>
+        </div>
+        <form id="payment-form" action="https://formsubmit.co/el/bufelu" method="POST">
+          <input type="hidden" name="_subject" value="TREVS DESIGN payment confirmation">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email address" required>
+          <input type="text" name="reference" placeholder="Payment reference (optional)">
+          <button class="button" type="submit">I have sent the payment</button>
+          <p class="flow-status" id="payment-status" aria-live="polite"></p>
+        </form>
+        <a class="back-to-contact" href="#contact">Back to enquiry</a>
+      </div>
+    </section>
+
+    <section class="flow-step" id="thank-you-step" hidden>
+      <div class="flow-panel">
+        <p class="eyebrow">TREVS DESIGN / PAYMENT RECEIVED</p>
+        <h2>Thank you, valued customer.</h2>
+        <p>Your payment confirmation has been sent. We appreciate your trust and look forward to creating something great for you.</p>
+        <a class="button" href="#top">Return to homepage</a>
       </div>
     </section>
   </main>
@@ -257,6 +316,56 @@
   <footer><div class="shell footer-row"><span>© 2026 TREVS DESIGN</span><span>Web / Brand / Graphic design</span><a href="tel:08144438584">08144438584</a></div></footer>
   <script>
     const heroArt = document.querySelector('.hero-art');
+    const enquiryForm = document.querySelector('#enquiry-form');
+    const paymentForm = document.querySelector('#payment-form');
+    const paymentStep = document.querySelector('#payment-step');
+    const thankYouStep = document.querySelector('#thank-you-step');
+    const revealStep = (step) => {
+      step.hidden = false;
+      step.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    enquiryForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const status = document.querySelector('#enquiry-status');
+      const name = enquiryForm.elements.name.value.trim();
+      enquiryForm.elements._autoresponse.value = `Thank you so much, ${name}. We have received your enquiry and will be in touch soon.`;
+      status.textContent = 'Sending your enquiry...';
+      try {
+        const response = await fetch(enquiryForm.action, { method: 'POST', body: new FormData(enquiryForm) });
+        await response.text();
+        if (!response.ok) throw new Error(`Form service returned ${response.status}`);
+        status.textContent = 'Enquiry sent. Continue with bank transfer below.';
+        revealStep(paymentStep);
+      } catch (error) {
+        status.textContent = 'The enquiry could not be sent. Please check your connection and try again.';
+      }
+    });
+
+    document.querySelector('#copy-account').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText('5174477903');
+        document.querySelector('#copy-status').textContent = 'Account number copied.';
+      } catch (error) {
+        document.querySelector('#copy-status').textContent = 'Copy is unavailable. Please select the account number.';
+      }
+    });
+
+    paymentForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const status = document.querySelector('#payment-status');
+      status.textContent = 'Sending payment confirmation...';
+      try {
+        const response = await fetch(paymentForm.action, { method: 'POST', body: new FormData(paymentForm) });
+        await response.text();
+        if (!response.ok) throw new Error(`Form service returned ${response.status}`);
+        status.textContent = 'Payment confirmation sent.';
+        revealStep(thankYouStep);
+      } catch (error) {
+        status.textContent = 'We could not send the confirmation. Please check your connection and try again.';
+      }
+    });
+
     const revealItems = document.querySelectorAll('section > .shell');
     const navigationLinks = document.querySelectorAll('nav a:not(.nav-cta)');
     const sections = document.querySelectorAll('main section[id]');
